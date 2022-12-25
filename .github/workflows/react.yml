@@ -34,15 +34,15 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            sudo az storage blob upload-batch --account-name videogangastatic1 --auth-mode key -d '$web' -s .
+            az storage blob upload-batch --account-name videogangastatic1 --auth-mode key -d '$web' -s .
       - name: Purge CDN endpoint
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            sudo az cdn endpoint purge --content-paths  "/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"
+            az cdn endpoint purge --content-paths  "/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"
 
       # Azure logout
       - name: logout
         run: |
-          sudo az logout
+          az logout
         if: always()
