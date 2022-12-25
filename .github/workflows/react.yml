@@ -39,7 +39,7 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az cdn endpoint purge --content-paths  "/*" --profile-name "CDN_PROFILE_NAME" --name "CDN_ENDPOINT" --resource-group "RESOURCE_GROUP"
+            az cdn endpoint purge --content-paths  "/*" --profile-name "video-ganga-cdn" --name "pirates.azureedge.net" --resource-group "github-action-runner-vm"
 
       # Azure logout
       - name: logout
